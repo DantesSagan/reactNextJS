@@ -26,11 +26,11 @@
 ## Next.js simplifies the process of building a react application for production
 
 1. File based routing 
-1. 2 Pre-rendering
-1. 3 API routes
-1. 4 Support for CSS modules
-1. 5 Authentication
-1. 6 Dev and Prod build system
+1. Pre-rendering
+1. API routes
+1. Support for CSS modules
+1. Authentication
+1. Dev and Prod build system
 
 # Pre-requisites
 
