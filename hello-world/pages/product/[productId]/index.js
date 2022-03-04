@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import React from 'react';
@@ -10,13 +11,20 @@ export default function ProductDetail() {
   const router = useRouter();
   const productId = router.query.productId;
   return (
-    <h1>
-      Detail about product -
-      <span
-        style={{ color: 'red', padding: '5px', textDecoration: 'underline' }}
-      >
-        {productId}{' '}
-      </span>
-    </h1>
+    <div>
+      <Link href='/'>
+        <a>
+          <h2>Home</h2>
+        </a>
+      </Link>
+      <h1>
+        Detail about product -
+        <span
+          style={{ color: 'red', padding: '5px', textDecoration: 'underline' }}
+        >
+          {productId}{' '}
+        </span>
+      </h1>
+    </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function Review() {
   // In this case with nested dynamic router we can created folder url nested path to element's
@@ -8,8 +9,13 @@ export default function Review() {
   const router = useRouter();
   const { productId, reviewId } = router.query;
   return (
-    <h1>
-      Review - {reviewId} for product - {productId}{' '}
-    </h1>
+    <div>
+      <Link href='/'>
+        <a>Home</a>
+      </Link>
+      <h1>
+        Review - {reviewId} for product - {productId}{' '}
+      </h1>
+    </div>
   );
 }
