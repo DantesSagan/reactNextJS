@@ -14,6 +14,18 @@ export default function Home() {
   //    5. Link component to navigate on click of an element
   //    6.useRouter hook's router.push method to navigate programmatically
   //    7.How to create a custom 404 page not found
+
+  // 14 Pre-rendering & Data fetching intro
+  //  Types of pre-rendering
+  //  1.Static generation
+  //  -without data
+  //  -with data
+  //  -incremental static generation
+  //  -dymanic parameters when fetching data
+  // 2.Server-side rendering
+  //  -data fetching
+  //  Client-side data fetching
+  //  Combining pre-rendering with client-side data fetching
   const router = useRouter();
 
   const handleClick = () => {
