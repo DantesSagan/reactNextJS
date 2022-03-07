@@ -14,3 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
+.rHome:hover {
+  cursor: pointer;
+  background: black;
+  border: 5px dotted yellow;
+  border-radius: 15px;
+  color: white;
+  width: 350px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}

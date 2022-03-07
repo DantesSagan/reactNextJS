@@ -10,15 +10,19 @@ export default function Home() {
     console.log('Placing you order');
     router.replace('/product');
   };
-
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div
+      style={{
+        textAlign: 'center',
+      }}
+    >
       <h1>Home page</h1>
       <nav
         style={{
           justifyItems: 'center',
           display: 'inline-block',
           border: '5px solid red',
+          borderRadius: '15px',
           padding: '15px',
         }}
       >
