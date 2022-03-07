@@ -39,6 +39,39 @@ export default function Home() {
   //      If serach engine hits a pre-rendered page though, all the content is present
   //      in the source code which will help index that page
   //      if SEO is of concern for your app, pre-rendering is definitely what you want
+
+  // 16 Static generation
+  //      A method of pre-rendering where the HTML pages are generated at build time
+  //      The HTML with all the data that makes up the content of the web page are negerated in advance
+  //        when you build your application
+  //      Recommended method to pre-render pages whenever possible
+  //      Page can be built once, cached by a CDN(contain delivery network)and served to the client almost instantly
+  //      Ex: Blog pages, e-commerce Product pages, documentation and marketing pages
+
+  //      Next JS, by default will pre-render every page in our app
+  //      The HTML for every page will automatically be statically generated whne we build our application
+  //      "Throughout this video, you've been mentioning that pages are generated at build time.
+  //      But there is no build for application yet, is there? Aren't we running application in development mode?"
+  //        Prod Server - An optimized build is created once and you deploy that build.
+  //      You don't make code changes on the go once it is deployed.
+  //        Dev Server - we should be able to make changes in our code and we want that code to immediately
+  //      reflect in the browser.
+  //      For production builds, a page will be pre-rendered once when we run the build command.
+  //      In development mode, the page is pre-rendered for every request you make.
+
+  // Static generation contd.
+  //       Next JS, by default, without any configuration,
+  //       statically generates every page in our app when we build it for production.
+  //      This allows the page to be cached by a CDN and indexed by a search engine.
+
+  // Static generation & Data
+  //    Static generation without data
+  //      Static generation without data can be used with and without data
+  //          For pages that can be generated without fetching external data at buld time.
+  //          Builds the app for production => The HTML is generated - no need to fetch external data
+  //    Static generation with data
+  //      For pages can only be generated after fetching external data at build time.
+  //      The HTML can only be generated after fetching data
   const router = useRouter();
 
   const handleClick = () => {
