@@ -64,7 +64,7 @@ export default function Home() {
   //       statically generates every page in our app when we build it for production.
   //      This allows the page to be cached by a CDN and indexed by a search engine.
 
-  // Static generation & Data
+  // Static generation & DataAl
   //    Static generation without data
   //      Static generation without data can be used with and without data
   //          For pages that can be generated without fetching external data at buld time.
@@ -103,6 +103,12 @@ export default function Home() {
           <li>
             <Link href='/blog/first'>
               <a>Link to Blog first</a>
+            </Link>
+          </li>
+
+          <li>
+            <Link href='/users'>
+              <a>Link to list of users</a>
             </Link>
           </li>
 
