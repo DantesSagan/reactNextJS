@@ -26,6 +26,19 @@ export default function Home() {
   //  -data fetching
   //  Client-side data fetching
   //  Combining pre-rendering with client-side data fetching
+
+  // 15 Pre-rendering
+  //  1.Pre-rendering improve performance
+  //      In a React app, you need to wait for the JavaScript to be exectued
+  //      Perhaps fetch data from an external API and the render the UI
+  //      There is a wait time for the user
+  //      With a pre-rendered page, the HTML is already generated and loads faster
+  //  2.Pre-rendering helps with SEO
+  //      If you're building a blog or an e-commerce site, SEO is a concern
+  //      With a React app, if the search engine hits your page, it only sees a div tag with id equal to root
+  //      If serach engine hits a pre-rendered page though, all the content is present
+  //      in the source code which will help index that page
+  //      if SEO is of concern for your app, pre-rendering is definitely what you want
   const router = useRouter();
 
   const handleClick = () => {
