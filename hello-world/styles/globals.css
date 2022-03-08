@@ -29,6 +29,7 @@ a {
 }
 .usersUl {
   display: inline-block;
+  
 }
 .usersLi {
   float: left;

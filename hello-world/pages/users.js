@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import User from '../components/user';
 
 export default function UsersList({ users }) {
   return (
@@ -13,32 +14,10 @@ export default function UsersList({ users }) {
         UsersList <br />{' '}
       </h1>
       {users.map((userItem) => {
-        return (
-          <div
-            key={userItem.id}
-            style={{ display: 'flex', flexDirection: 'column' }}
-          >
-            <ul className='usersUl'>
-              <li className='usersLi'>{userItem.id}</li>
-            </ul>
-            <ul className='usersUl'>
-              <li className='usersLi'>{userItem.name}</li>
-            </ul>
-            <ul className='usersUl'>
-              <li className='usersLi'>{userItem.username}</li>
-            </ul>
-            <ul className='usersUl'>
-              <li className='usersLi'>{userItem.address.street}</li>
-            </ul>
-            <ul className='usersUl'>
-              <li className='usersLi'>{userItem.phone}</li>
-            </ul>
-            <ul className='usersUl'>
-              <li className='usersLi'>{userItem.website}</li>
-            </ul>
-            <hr />
-          </div>
-        );
+        // If you want to organized you code
+        // use folder components to structure you code in file what called with component name
+        // and copy paste jsx what you needed 
+        return <User userItem={userItem} />;
       })}
       <Link href='/'>Home</Link>
     </div>
