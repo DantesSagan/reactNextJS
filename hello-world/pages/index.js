@@ -94,7 +94,7 @@ export default function Home() {
   // Export getStaticProps function for external data
   // HTML, JavaScript and JSON file are generated
   //  if you navigate directly to the page route, the HTML file is served
-  // if you navigate to the page route from a different route, the page is created client side using the 
+  // if you navigate to the page route from a different route, the page is created client side using the
   // JavaScript and JSON prefetched from the server
 
   const router = useRouter();
@@ -119,7 +119,7 @@ export default function Home() {
           padding: '15px',
         }}
       >
-        <ul>
+        <ol>
           <li>
             <Link href='/blog'>
               <a>Link to Blog</a>
@@ -130,24 +130,27 @@ export default function Home() {
               <a>Link to Blog first</a>
             </Link>
           </li>
-
-          <li>
-            <Link href='/users'>
-              <a>Link to list of users</a>
-            </Link>
-          </li>
-
           <li>
             <Link href='/product'>
               <a>Link to product</a>
             </Link>
           </li>
-        </ul>{' '}
-        And the same thing as <i>Link to Product</i> like example below <br />
-        {/* Navigate Programmatically */}
-        <button className='' onClick={handleClick}>
-          Place Order
-        </button>
+          And the same thing as <i>Link to Product</i> like example below <br />
+          {/* Navigate Programmatically */}
+          <button className='' onClick={handleClick}>
+            Place Order
+          </button>
+          <li>
+            <Link href='/users'>
+              <a>Link to list of users</a>
+            </Link>
+          </li>
+          <li>
+            <Link href='/posts'>
+              <a>Link to list of posts</a>
+            </Link>
+          </li>
+        </ol>{' '}
       </nav>
     </div>
   );
