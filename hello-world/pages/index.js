@@ -72,6 +72,31 @@ export default function Home() {
   //    Static generation with data
   //      For pages can only be generated after fetching external data at build time.
   //      The HTML can only be generated after fetching data
+  // 20 Inspecting Static Generation Builds with creating .next
+
+  //  21 Running static generation builds
+  //  Link Pre-fetching
+  //  Any <Link /> component in the viewport (initially or through scroll) will be prefetched by default
+  //  (including the corresponding data for pages using Static generation)
+
+  // Link pre-fetching contd.
+  // When a page with getStatciProps is pre=rendered at build time, in addition
+  // to the page HTML file, Next.js generates a JSON file holding the result of running getStaticProps
+  // The JSON file will be used in client-side routing through next/link, or next/router
+  //  When you navigate to a page that's pre-rendered using getStaticProps, Next.js
+  // fetches the JSON file (pre-computed at build time) and uses it as the props to create the page component client-side
+  // Client-side page transitions will not call getStaticProps as only the exported JSON is used
+
+  // Static generation summary so far
+
+  //  Static generation is method of pre-rendering where the HTML pages are generated at build time
+  // With and without external data
+  // Export getStaticProps function for external data
+  // HTML, JavaScript and JSON file are generated
+  //  if you navigate directly to the page route, the HTML file is served
+  // if you navigate to the page route from a different route, the page is created client side using the 
+  // JavaScript and JSON prefetched from the server
+
   const router = useRouter();
 
   const handleClick = () => {
