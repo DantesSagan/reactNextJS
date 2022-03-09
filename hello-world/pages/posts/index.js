@@ -1,24 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
+import Posts from '../../components/posts';
 
 export default function PostList({ posts }) {
-  return (
-    <div>
-      <h1>List os Posts</h1>
-      {posts.map((postItem) => {
-        return (
-          <div key={postItem.id} style={{ cursor: 'pointer' }}>
-            <Link href={`posts/${postItem.id}`} passHref>
-              <h2>
-                {postItem.id} - {postItem.title}
-              </h2>
-            </Link>
-            <hr />
-          </div>
-        );
-      })}
-    </div>
-  );
+  return <Posts posts={posts} />;
 }
 
 export async function getStaticProps() {
@@ -26,7 +11,7 @@ export async function getStaticProps() {
   const data = await response.json();
   return {
     props: {
-      posts: data.slice(0, 3),
+      posts: data.slice(0, 10),
     },
   };
 }
