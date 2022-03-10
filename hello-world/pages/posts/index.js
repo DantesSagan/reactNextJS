@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import Posts from '../../components/posts';
 
@@ -11,7 +10,7 @@ export async function getStaticProps() {
   const data = await response.json();
   return {
     props: {
-      posts: data.slice(0, 10),
+      posts: data,
     },
   };
 }
