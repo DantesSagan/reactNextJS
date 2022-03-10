@@ -97,6 +97,11 @@ export default function Home() {
   // if you navigate to the page route from a different route, the page is created client side using the
   // JavaScript and JSON prefetched from the server
 
+  // 23 Inspecting getStaticPaths builds
+
+  //  When we are uses command like npm run build we generate static build of site with
+  //  fetched data before it will be in UI and this is helps a lot to more flexible and faster when you using site
+
   const router = useRouter();
 
   const handleClick = () => {

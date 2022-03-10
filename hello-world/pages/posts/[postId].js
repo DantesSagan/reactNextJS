@@ -10,7 +10,7 @@ export default function Post({ post }) {
     </div>
   );
 }
-// To summarys what we are done
+// To summarize what we are done
 // In getStaticProps we extracted params from context object that getStaticProps automatically recieves
 // and from this params object we get hold off the postId route parameter
 // We made the API call, fetch the data and pass it into the page component as props
@@ -31,7 +31,8 @@ export async function getStaticProps(context) {
 }
 export async function getStaticPaths() {
   return {
-    paths: [{ params: { postId: '1' } }],
+    //   Need to try implemented this "postId: assignment" to every possible id from 0 to 1000000
+    paths: [{ params: { postId: '1' } }, { params: { postId: '2' } }],
     fallback: false,
   };
 }
