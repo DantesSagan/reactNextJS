@@ -52,6 +52,18 @@ export async function getStaticPaths() {
     //   },
     // ],
     paths,
+    // 26 getStaticPaths
+    // fallback: false
+    //  1. The paths returned getStaticPaths will be rendered to HTML at build time by getStaticProps
+    //  2. if fallback is set to false, them any paths not returned by getStaticPaths will result in a 404 page
+    //  3. By following second option. If you have 3 recieved data and 3 getting paths data from server you can take only this data and not other
+    //  When use fallback: false,
+    //      The false value is most suitable if you have an application with a small nubmer of paths to pre-render
+    //      When new pages are not added often.
+    //      A blog site with a few articles is a good example for fallback set to false
+    //      Each blog post with be statically generated at build time which helps with fast load times as a SEO
+    // fallback: true;
+    // fallback: 'blocking'
     fallback: false,
   };
 }
