@@ -22,7 +22,7 @@ export default function Products({ products }) {
 export async function getStaticProps(context) {
   const { params } = context;
   const response = await fetch(
-    `http://localhost:4000/products/${params.productsId}`
+    `https://gist.githubusercontent.com/DantesSagan/bd028cfe5d18f3e5985877aa6d868f3a/raw/b8d40068b6d8db56f0ad3eda8349629ef5e0b48c/products/${params.productsId}`
   );
   console.log(`Generating page for /posts/${params.productsId}`);
 
@@ -41,7 +41,9 @@ export async function getStaticProps(context) {
   };
 }
 export async function getStaticPaths() {
-  const response = await fetch('http://localhost:4000/products');
+  const response = await fetch(
+    'https://gist.githubusercontent.com/DantesSagan/bd028cfe5d18f3e5985877aa6d868f3a/raw/b8d40068b6d8db56f0ad3eda8349629ef5e0b48c/products'
+  );
   const data = await response.json();
 
   // This is how to fecth list of paths for dymanic page
