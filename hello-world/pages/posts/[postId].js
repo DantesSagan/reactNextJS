@@ -50,9 +50,9 @@ export async function getStaticProps(context) {
   const data = await response.json();
 
   if (!data.id) {
-    return {
-      notFound: true,
-    };
+      return {
+        notFound: true,
+      };
   }
 
   return {

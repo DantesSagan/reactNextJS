@@ -155,7 +155,13 @@ export default function Home() {
               <a>Link to list of posts</a>
             </Link>
           </li>
+          <li>
+            <Link href='/products'>
+              <a>Link to list of products</a>
+            </Link>
+          </li>
         </ol>{' '}
+      <button onClick={() => window.history.forward()}>Forward</button>
       </nav>
     </div>
   );
