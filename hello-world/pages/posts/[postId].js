@@ -120,5 +120,20 @@ export async function getStaticPaths() {
     //  Shortly after, getStaticProps finishes and the page will be
     //  rendered with requested data. From the onwards, everyone whoe requests the same page will get the statically pre-rendered page.
     //  This ensures that users always have a fast experience while preserving fast builds and the benefits of Static Generation
+
+    // 28 getStaticPaths fallback: 'blocking'
+    //  1. The paths returned from getStaticPaths will be rendered to HTML at build time by getStaticProps
+    //  2. The paths that have not been generated at build time will not result in a 404 page. Instead, on the first request,
+    //       Next.js will render the page on the server and return the generated HTML.
+    //  3. When that's done, the browser receives the HTML for the generated path.
+    //      From the user's perspective, it will transition from 'the browser is requesting the page' to 'the full page is loaded'.
+    //      There is no flash of loading/fallback state.
+    //  4. At the same time, Next.js keeps track of the new list of pre-rendered pages.
+    //      Subsequent requests to the same path will serve the generated page, just like other pages pre-rendered at build time.
+    // When it might be used?
+    //  On a UX level, sometimes, people prefer the page to be laoded without a loading indicator if the wait time is a few milliseconds.
+    //  This helps avoid the layout shift.
+    //   Some crawlers did not support JavaScript. The loading page would
+    //   be rendered and then the full page would be loaded which was causing a problem.
   };
 }
