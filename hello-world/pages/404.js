@@ -5,7 +5,7 @@ export default function PageNotFound() {
   return (
     <h1 style={{ textAlign: 'center' }}>
       <span style={{ fontSize: '68px', textDecoration: 'underline' }}>404</span>
-      <br /> page not found <br />
+      <br /> This page could not be found <br />
       <Link href='/'>
         <h4
           style={{
