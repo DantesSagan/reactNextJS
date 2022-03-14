@@ -1,8 +1,21 @@
+import axios from 'axios';
 import { useRouter } from 'next/router';
 import React from 'react';
 
 export default function Products({ products }) {
   const router = useRouter();
+
+  const deleteSuperHero = () => {
+    return axios.delete(`http://localhost:4000/products/${products.id}`);
+  };
+
+  const handleDeleteHeroClick = () => {
+
+    const deleteID = products.id;
+   
+    deleteSuperHero(deleteID);
+    
+  };
 
   if (router.isFallback) {
     return <h1>Loading...</h1>;
@@ -28,7 +41,8 @@ export default function Products({ products }) {
           {products.id} - {products.title} - {products.price}{' '}
         </h2>
         <p>{products.description}</p>
-        <button onClick={() => router.back()}>Back</button>
+        <button onClick={() => router.back()}>Back</button>{' '}
+        <button onClick={handleDeleteHeroClick}>Delete</button>
       </section>
     </div>
   );
