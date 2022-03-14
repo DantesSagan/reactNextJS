@@ -112,7 +112,24 @@ export default function Home() {
   //  How?
   //  In the getStaticProps function, apart from the props key, revalidate key
   //  The value for revalidate is the number of seconds after which a page re-generation can occur
-  //  
+
+  // 30 Inspecting ISR builds
+  // Stale while revalidate
+  // Data fetching and refetching data from /products between Browser and HTML
+  // For any request and after Browser withing 30 seconds   the same cached HTML page was served even there is a change in the data by that page
+  // After 30 sec have elapsed if a user makes request to /products Next.js is still going to send cached version of the page.
+  // This page is a Stale page because not contain fresh data. But meanwhile when data is changed Page regeneration is triggered.
+  // Once page was successfully regenerated Next.js will invalidate the cached and for any new requests it serves the updated products page.
+  // If new data has not regenerated the old data continue the serve
+  // Basically Next.js the serve Stale page while revalidation is happening in the background
+
+  // Re-generation
+  // A re-generation is initiated only if a user makes a request after the revalidate time
+  // If a user visits our product details page but there is no other user hitting that page the entire day, the re-generation does not happen
+  //  Revalidate doesn not mean the page automatically re-generated every 10 seconds
+  //  it simply denotes the time after which, if a user makes a request, a re-generation has to be initiated
+  //  The re-generation can also fail and the previously cached HTML could be served till the subsequent re-generations succeed
+
   const router = useRouter();
 
   const handleClick = () => {

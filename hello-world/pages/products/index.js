@@ -6,6 +6,7 @@ export default function ProductsList({ products }) {
 }
 
 export async function getStaticProps() {
+  console.log('Generating / Regenerating ProductsList');
   const response = await fetch('http://localhost:4000/products');
   const data = await response.json();
   if (!response.ok) {
