@@ -102,6 +102,17 @@ export default function Home() {
   //  When we are uses command like npm run build we generate static build of site with
   //  fetched data before it will be in UI and this is helps a lot to more flexible and faster when you using site
 
+  // 29 ICR
+  // Incremental static regeneration (ISR)
+  //  Therese was a need to update only these pages which needed a change without having to rebuild the entire app
+
+  //  With ISR, Next.js allows you to update static pages after you've built your application
+  //  You can statically generate individual pages without needing rebuld the entire site, effectively solving the issue of dealing with stale data
+
+  //  How?
+  //  In the getStaticProps function, apart from the props key, revalidate key
+  //  The value for revalidate is the number of seconds after which a page re-generation can occur
+  //  
   const router = useRouter();
 
   const handleClick = () => {
@@ -161,7 +172,7 @@ export default function Home() {
             </Link>
           </li>
         </ol>{' '}
-      <button onClick={() => window.history.forward()}>Forward</button>
+        <button onClick={() => window.history.forward()}>Forward</button>
       </nav>
     </div>
   );

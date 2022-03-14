@@ -27,9 +27,12 @@ export default function Products({ products }) {
           return (
             <div key={productsItem.id} style={{ cursor: 'pointer' }}>
               <Link href={`products/${productsItem.id}`} passHref>
-                <h2>
-                  {productsItem.id} - {productsItem.title}
-                </h2>
+                <div>
+                  <h2>
+                    {productsItem.id} - {productsItem.title}
+                  </h2>
+                  <p>{productsItem.price}</p>
+                </div>
               </Link>
               <hr />
             </div>
