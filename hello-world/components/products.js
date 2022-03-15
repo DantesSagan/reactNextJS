@@ -42,12 +42,16 @@ export default function Products({ products }) {
         <button onClick={() => router.back()}>Back</button>
         <button onClick={() => window.history.forward()}>Forward</button>
         <br />
+        <h1>ID</h1>
         <input value={id} onChange={(e) => setId(e.target.value)} />
         <br />
+        <h1>Title</h1>
         <input value={title} onChange={(e) => setTitle(e.target.value)} />
         <br />
+        <h1>Price</h1>
         <input value={price} onChange={(e) => setPrice(e.target.value)} />
         <br />
+        <h1>Description</h1>
         <input
           value={description}
           onChange={(e) => setDescription(e.target.value)}

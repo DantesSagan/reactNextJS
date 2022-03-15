@@ -1,4 +1,24 @@
 {
+  "news": [
+    {
+      "id": 1,
+      "title": "News Article 1",
+      "category": "sports",
+      "description": "Description 1"
+    },
+    {
+      "id": 2,
+      "title": "News Article 2",
+      "category": "politics",
+      "description": "Description 2"
+    },
+    {
+      "id": 3,
+      "title": "News Article 3",
+      "category": "clothes",
+      "description": "Description 3"
+    }
+  ],
   "products": [
     {
       "id": 1,
@@ -23,6 +43,12 @@
       "title": "Product 4",
       "price": "3500",
       "description": "Description 4"
+    },
+    {
+      "id": "5",
+      "title": "Product 5",
+      "price": "4500",
+      "description": "Description 5"
     }
   ]
 }

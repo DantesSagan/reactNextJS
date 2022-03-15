@@ -222,6 +222,11 @@ export default function Home() {
               <a>Link to list of products</a>
             </Link>
           </li>
+          <li>
+            <Link href='/news'>
+              <a>Link to list of news</a>
+            </Link>
+          </li>
         </ol>{' '}
         <button onClick={() => window.history.forward()}>Forward</button>
       </nav>
