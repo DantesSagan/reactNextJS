@@ -41,7 +41,19 @@ export default function ArticleListByCategory({ articles, category }) {
 //  with getServerSideProps which you can filter news by category for example by sports, politics, clothes and etc.
 //  with using context parameter with destructure by category
 export async function getServerSideProps(context) {
-  const { params } = context;
+  // The 'context' parameter is an object containing following keys:
+  // params, req, res, query
+  const { params, req, res, query } = context;
+  // In this case we get access to application cookies what displayed for additional data from server
+  // and how to hold of them of server side props
+  console.log(req.headers.cookie);
+  // query string - that displayed query response what u've been called in URL input like {category:'sports'}
+  // and for example like this with query response http://localhost:4000/news?subcategory=sports
+  // query strings are quite common when you have to filter client side and ensure URL's can be shared to the others
+  // would be amazon products URL's after you applied some filters
+
+  console.log(query);
+  res.setHeader('Set-Cookie', ['name=Dantes']);
   const { category } = params;
   const response = await fetch(
     `http://localhost:4000/news?category=${category}`
