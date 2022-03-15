@@ -1,12 +1,25 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function NewsArticleList({ articles }) {
+  const [category, setCategory] = useState('');
   const router = useRouter();
 
+  const PickCategory = () => {
+    router.push(`http://localhost:3000/news/${category}`);
+  };
   return (
     <div>
       <h1>NewsArticleList</h1>
+      <h2>Filter by category</h2>
+      <input
+        placeholder='type category that you want to filter'
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+      />
+      <br />
+      <button onClick={PickCategory}>Filter</button>
+      <hr />
       {articles.map((articlesItem) => {
         return (
           <div key={articlesItem.id}>
@@ -14,6 +27,7 @@ export default function NewsArticleList({ articles }) {
           </div>
         );
       })}
+      <hr />
       <button onClick={() => router.back()}>Back</button>
     </div>
   );
