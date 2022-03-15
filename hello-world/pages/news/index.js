@@ -9,26 +9,37 @@ export default function NewsArticleList({ articles }) {
     router.push(`http://localhost:3000/news/${category}`);
   };
   return (
-    <div>
-      <h1>NewsArticleList</h1>
-      <h2>Filter by category</h2>
-      <input
-        placeholder='type category that you want to filter'
-        value={category}
-        onChange={(e) => setCategory(e.target.value)}
-      />
-      <br />
-      <button onClick={PickCategory}>Filter</button>
-      <hr />
-      {articles.map((articlesItem) => {
-        return (
-          <div key={articlesItem.id}>
-            {articlesItem.id}, {articlesItem.title}, {articlesItem.category}
-          </div>
-        );
-      })}
-      <hr />
-      <button onClick={() => router.back()}>Back</button>
+    <div style={{ textAlign: 'center' }}>
+      <section
+        style={{
+          textAlign: 'center',
+          justifyItems: 'center',
+          display: 'inline-block',
+          border: '5px solid red',
+          borderRadius: '15px',
+          padding: '15px',
+        }}
+      >
+        <h1>NewsArticleList</h1>
+        <h2>Filter by category</h2>
+        <input
+          placeholder='type category that you want to filter'
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        />
+        <br />
+        <button onClick={PickCategory}>Filter</button>
+        <hr />
+        {articles.map((articlesItem) => {
+          return (
+            <div key={articlesItem.id}>
+              {articlesItem.id}, {articlesItem.title}, {articlesItem.category}
+            </div>
+          );
+        })}
+        <hr />
+        <button onClick={() => router.back()}>Back</button>
+      </section>
     </div>
   );
 }

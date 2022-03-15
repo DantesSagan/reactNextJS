@@ -2,27 +2,44 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 export default function ArticleListByCategory({ articles, category }) {
-    const router = useRouter()
+  const router = useRouter();
+
   return (
-    <div>
-      ArticleListByCategory
-      <h1>
-        Showing new for category <i>{category}</i>
-      </h1>
-      {articles.map((articlesItem) => {
-        return (
-          <div key={articlesItem.id}>
-            <h2>
-              {articlesItem.id} - {articlesItem.title}
-            </h2>
-            <p>{articlesItem.description}</p>
-          </div>
-        );
-      })}
-      <button onClick={() => router.back()}>Back</button>
+    <div style={{ textAlign: 'center' }}>
+      <section
+        style={{
+          textAlign: 'center',
+          justifyItems: 'center',
+          display: 'inline-block',
+          border: '5px solid red',
+          borderRadius: '15px',
+          padding: '15px',
+        }}
+      >
+        ArticleListByCategory
+        <h1>
+          Showing new for category <i>{category}</i>
+        </h1>
+        {articles.map((articlesItem) => {
+          return (
+            <div key={articlesItem.id}>
+              <h2>
+                {articlesItem.id} - {articlesItem.title}
+              </h2>
+              <p>{articlesItem.description}</p>
+            </div>
+          );
+        })}
+        <button onClick={() => router.back()}>Back</button>
+      </section>
     </div>
   );
 }
+
+//   33 SSR with Dynamic Parameters
+//   In this case we are learned about how to implement dynamic parameters
+//  with getServerSideProps which you can filter news by category for example by sports, politics, clothes and etc.
+//  with using context parameter with destructure by category
 export async function getServerSideProps(context) {
   const { params } = context;
   const { category } = params;
