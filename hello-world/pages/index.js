@@ -164,6 +164,19 @@ export default function Home() {
   // The HTML is generated for every incoming request
   // SSR is a form of pre-rendering where the HTML is generated at request time
   // SSR is required when you need to fetch data per request and also when you need to fetch personalized data keeping in mind SEO
+
+  // 36 Client-side Data fetching
+  // Two forms of pre-rendering
+  //          Static generation & server-side rendering
+  //  How to fetch data
+  //           getStaticProps & getServerSideProps
+
+  // You might not always need to pre-render the data
+  // Ex: User dashboard page
+  // It is private, that is behind a login screen
+  // Highly user-specific and SEO is not relevant
+  // No need to pre-render the data
+  // You can rely on client side data fetching
   const router = useRouter();
 
   const handleClick = () => {
@@ -225,6 +238,11 @@ export default function Home() {
           <li>
             <Link href='/news'>
               <a>Link to list of news</a>
+            </Link>
+          </li>
+          <li>
+            <Link href='/dashboard'>
+              <a>Dashboard</a>
             </Link>
           </li>
         </ol>{' '}

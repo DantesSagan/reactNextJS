@@ -1,4 +1,10 @@
 {
+  "dashboard": {
+    "posts": 5,
+    "likes": 100,
+    "followers": 20,
+    "following": 50
+  },
   "news": [
     {
       "id": 1,
@@ -49,6 +55,18 @@
       "title": "Product 5",
       "price": "4500",
       "description": "Description 5"
+    },
+    {
+      "id": "6",
+      "title": "Title 6",
+      "price": "5500",
+      "description": "Description"
+    },
+    {
+      "id": "7",
+      "title": "Title 7",
+      "price": "6500",
+      "description": "Description 7"
     }
   ]
 }
