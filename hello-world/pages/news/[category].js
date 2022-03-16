@@ -44,21 +44,30 @@ export async function getServerSideProps(context) {
   // The 'context' parameter is an object containing following keys:
   // params, req, res, query
   const { params, req, res, query } = context;
+
   // In this case we get access to application cookies what displayed for additional data from server
   // and how to hold of them of server side props
   console.log(req.headers.cookie);
+
   // query string - that displayed query response what u've been called in URL input like {category:'sports'}
   // and for example like this with query response http://localhost:4000/news?subcategory=sports
   // query strings are quite common when you have to filter client side and ensure URL's can be shared to the others
   // would be amazon products URL's after you applied some filters
-
   console.log(query);
   res.setHeader('Set-Cookie', ['name=Dantes']);
+
   const { category } = params;
   const response = await fetch(
     `http://localhost:4000/news?category=${category}`
   );
   const data = await response.json();
+
+  // 35 inspecting ssr builds
+  // We inspect /news/[category]
+  // Server-side pages are not statically generated at build time
+  // If we inspect next/server/pages/news/[category] - we didn't see pre-rendered HTML pages
+  console.log(`Pre-rendering News Articles for category ${category}`);
+
   return {
     props: {
       articles: data,
