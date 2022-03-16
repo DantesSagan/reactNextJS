@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 // ADDITIONAL: if you use SWR  - stale while revalidate library
 // You can use shorter code with fetched data from the server
 // And plus overall when data changed from the server no need to refresh the page or reload
-// Data automatically received the fresh data and displayed it on returned JSX 
+// Data automatically received the fresh data and displayed it on returned JSX
 const fetcher = async () => {
   const response = await fetch('http://localhost:4000/dashboard');
   const data = await response.json();
@@ -15,13 +15,13 @@ export default function DashboardSWR() {
   const { data, error } = useSwr('dashboard', fetcher);
   const router = useRouter();
   if (error) {
-    return 'An error has occured';
+    return <h2>An error has occured</h2>;
   }
   if (!data) {
-    return 'Loading...';
+    return <h2>Loading...</h2>;
   }
   return (
-    <div>
+    <div style={{ textAlign: 'center' }}>
       <h2>Dashboard</h2>
       <h2>Posts - {data.posts}</h2>
       <h2>Likes - {data.likes}</h2>
