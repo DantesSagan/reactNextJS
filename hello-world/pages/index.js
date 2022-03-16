@@ -245,6 +245,11 @@ export default function Home() {
               <a>Dashboard</a>
             </Link>
           </li>
+          <li>
+            <Link href='/dashboard-swr'>
+              <a>DashboardSWR</a>
+            </Link>
+          </li>
         </ol>{' '}
         <button onClick={() => window.history.forward()}>Forward</button>
       </nav>

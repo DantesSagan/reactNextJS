@@ -7,7 +7,10 @@ export default function Dashboard() {
   const router = useRouter();
 
   useEffect(() => {
-    // Create asyn function
+    // ADDITIONAL: if you use just react-hooks and data changed from server
+    // data will not changed automatically because need to refresh page to received fresh data from the server
+
+    // Create async function
     async function fetchDashboardData() {
       // Create res await fetch data from current localhost by this URL parent path
       const response = await fetch('http://localhost:4000/dashboard');
