@@ -305,6 +305,11 @@ export default function Home() {
               <a>API routes</a>
             </Link>
           </li>
+          <li>
+            <Link href='/comments'>
+              <a>Example with comments get request</a>
+            </Link>
+          </li>
         </ol>{' '}
         <button onClick={() => window.history.forward()}>Forward</button>
       </nav>
