@@ -1,6 +1,6 @@
-import useSwr from 'swr';
 import React from 'react';
 import { useRouter } from 'next/router';
+import useSWR from 'swr';
 
 // ADDITIONAL: if you use SWR  - stale while revalidate library
 // You can use shorter code with fetched data from the server
@@ -12,7 +12,7 @@ const fetcher = async () => {
   return data;
 };
 export default function DashboardSWR() {
-  const { data, error } = useSwr('dashboard', fetcher);
+  const { data, error } = useSWR('dashboard', fetcher);
   const router = useRouter();
   if (error) {
     return <h2>An error has occured</h2>;

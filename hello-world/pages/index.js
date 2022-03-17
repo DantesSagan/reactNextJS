@@ -177,6 +177,12 @@ export default function Home() {
   // Highly user-specific and SEO is not relevant
   // No need to pre-render the data
   // You can rely on client side data fetching
+
+  // 38 Pre rendering + Client side Data fetching
+  //  Event listing page
+  //  A page that shows a list of events happening around you
+  //  SEO + Request time data fetching => Server side rendering with getServerSideProps
+  //  (ideally, botn pagination and filtering would takep place client but, for this example, we're only going to focus on filtering)
   const router = useRouter();
 
   const handleClick = () => {
@@ -248,6 +254,11 @@ export default function Home() {
           <li>
             <Link href='/dashboard-swr'>
               <a>DashboardSWR</a>
+            </Link>
+          </li>
+          <li>
+            <Link href='/event'>
+              <a>Event</a>
             </Link>
           </li>
         </ol>{' '}
