@@ -213,6 +213,15 @@ export default function Home() {
   // Dynamic API router
   // Handle DELETE request
   // Catch all API routes
+
+  // 41 API ROUTES
+  // Next.js is a full stack framework
+  // You can write the FE code in React and also write APIs that can be called by the front end code
+  // API routes allow you to create RESTful endpoints as part of you Next.js application folder structure
+  // Within the pages folder, you need to create a folder call 'api'
+  // Within that 'api' folder, you can define all the APIs for your application
+  // You can add business logic without needing to write any additional custom server code and without having to configure any API routes
+  // Next JS give you everything you need to write full-stack React + NODE applications
   const router = useRouter();
 
   const handleClick = () => {
@@ -289,6 +298,11 @@ export default function Home() {
           <li>
             <Link href='/event'>
               <a>Event</a>
+            </Link>
+          </li>
+          <li>
+            <Link href='/api'>
+              <a>API routes</a>
             </Link>
           </li>
         </ol>{' '}
