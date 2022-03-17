@@ -183,6 +183,28 @@ export default function Home() {
   //  A page that shows a list of events happening around you
   //  SEO + Request time data fetching => Server side rendering with getServerSideProps
   //  (ideally, botn pagination and filtering would takep place client but, for this example, we're only going to focus on filtering)
+
+  // 39 Pre-rendering & data fetching summary
+  // Pre-rendering refers to the process of generating HTML is advance which results in better performance and SEO
+  // Next js supports two forms of pre-rendering: -Static generation and Server-side rendering
+  
+  // Static generation
+  // A method of pre-rendering where the HTML pages are generated at build time
+  // Pages can be built once, cached by a CDN and served to clietns almost instanlty
+  // Example: Marketing or Bloggin site
+  //  For a normal page, use getStaticPages function to fetch the data ahead of time
+  //  For a dynamic page, you also need the getStaticPaths function
+  // Fallback: false | true | 'blocking'
+  // Pages cannot be updated without a full re-build
+
+  // Incremental Static Regeneration
+
+  //  Server-side renedering
+  //      Fetch data at request time 
+  //      Personalize data based on a user information in the incoming request
+  //      getServerSideProps function helps with SSR data fetching
+  //      Combining pre-rendering with clietn-side data fetching
+  //      Shallow routing - Routing without calling getStaticProps/getServerSideProps
   const router = useRouter();
 
   const handleClick = () => {

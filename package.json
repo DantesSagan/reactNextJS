@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "serve-json": "json-server --watch db.json --port 4000"
+    "serve-json": "json-server --watch db.json --port 4000",
+    "both": "next build && next start"
   },
   "dependencies": {
     "axios": "^0.26.1",
