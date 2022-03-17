@@ -187,7 +187,7 @@ export default function Home() {
   // 39 Pre-rendering & data fetching summary
   // Pre-rendering refers to the process of generating HTML is advance which results in better performance and SEO
   // Next js supports two forms of pre-rendering: -Static generation and Server-side rendering
-  
+
   // Static generation
   // A method of pre-rendering where the HTML pages are generated at build time
   // Pages can be built once, cached by a CDN and served to clietns almost instanlty
@@ -200,11 +200,19 @@ export default function Home() {
   // Incremental Static Regeneration
 
   //  Server-side renedering
-  //      Fetch data at request time 
+  //      Fetch data at request time
   //      Personalize data based on a user information in the incoming request
   //      getServerSideProps function helps with SSR data fetching
   //      Combining pre-rendering with clietn-side data fetching
   //      Shallow routing - Routing without calling getStaticProps/getServerSideProps
+
+  // 40 API
+  // API router feature & how to create a basic API in Next.js
+  // Handle Get requests
+  // Handle POST request
+  // Dynamic API router
+  // Handle DELETE request
+  // Catch all API routes
   const router = useRouter();
 
   const handleClick = () => {
