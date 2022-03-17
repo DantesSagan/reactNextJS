@@ -2,8 +2,6 @@
 
 # folders & files
 
-/pages/products/[productsId].js
-/pages/products/index.js
 
 # dependencies
 /node_modules
