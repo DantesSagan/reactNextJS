@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 export default function CommentsPage() {
+  const [comment, setComment] = useState('');
   const [comments, setComments] = useState([]);
   const [turnSwitch, setTurnSwitch] = useState(true);
 
@@ -10,6 +11,18 @@ export default function CommentsPage() {
     const data = await response.json();
     setComments(data);
     setTurnSwitch(!turnSwitch);
+    console.log(data);
+  };
+
+  const submitComment = async () => {
+    const response = await fetch('/api/comments', {
+      method: 'POST',
+      body: JSON.stringify({ comment }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
     console.log(data);
   };
 
@@ -26,6 +39,12 @@ export default function CommentsPage() {
           <button onClick={() => setTurnSwitch(!turnSwitch)}>
             Hide comments
           </button>
+          <input
+            type='text'
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+          />
+          <button onClick={submitComment}>Submit Comment</button>
           {comments.map((comItem) => {
             return (
               <div key={comItem.id}>
