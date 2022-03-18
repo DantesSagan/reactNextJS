@@ -9,7 +9,7 @@ export default function PageNotFound() {
       <Link href='/'>
         <h4
           style={{
-            marginTop: '25px',
+            marginTop: '55px',
             padding: '5px',
             display: 'flex',
             textAlign: 'center',
