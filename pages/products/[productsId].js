@@ -1,8 +1,13 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function Products({ products }) {
+  const [id, setId] = useState('');
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
+  const [check, setCheck] = useState(false);
   const router = useRouter();
 
   const deleteSuperHero = () => {
@@ -10,11 +15,19 @@ export default function Products({ products }) {
   };
 
   const handleDeleteHeroClick = () => {
-
     const deleteID = products.id;
-   
+
     deleteSuperHero(deleteID);
-    
+  };
+
+  const updateSuperHero = async (hero) => {
+    return await axios.patch(`http://localhost:4000/products/${products.id}`, hero);
+  };
+
+  const handleUpdateHeroClick = () => {
+    const hero = { id, title, price, description };
+
+    updateSuperHero(hero);
   };
 
   if (router.isFallback) {
@@ -40,6 +53,51 @@ export default function Products({ products }) {
         <h2>
           {products.id} - {products.title} - {products.price}{' '}
         </h2>
+        <section
+          style={{
+            textAlign: 'center',
+            justifyItems: 'center',
+            display: 'inline-block',
+            border: '5px solid red',
+            borderRadius: '15px',
+            padding: '15px',
+          }}
+        >
+          <h1>Change List os Products</h1>
+          <br />
+
+          {check ? (
+            <div
+              style={{
+                border: '2px solid black',
+                borderRadius: '15px',
+                padding: '5px',
+                margin: '5px',
+              }}
+            >
+              <h1>ID</h1>
+              <input value={id} onChange={(e) => setId(e.target.value)} />
+              <br />
+              <h1>Title</h1>
+              <input value={title} onChange={(e) => setTitle(e.target.value)} />
+              <br />
+              <h1>Price</h1>
+              <input value={price} onChange={(e) => setPrice(e.target.value)} />
+              <br />
+              <h1>Description</h1>
+              <input
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              <br />
+              <button onClick={handleUpdateHeroClick}>AddId</button>
+              <br />
+              <button onClick={() => setCheck(!check)}>Cancel</button>
+            </div>
+          ) : (
+            <button onClick={() => setCheck(!check)}>Add ID form</button>
+          )}
+        </section>
         <p>{products.description}</p>
         <button onClick={() => router.back()}>Back</button>{' '}
         <button onClick={handleDeleteHeroClick}>Delete</button>

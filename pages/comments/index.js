@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 export default function CommentsPage() {
   const [comment, setComment] = useState('');
+  const [text, setText] = useState('');
   const [comments, setComments] = useState([]);
   const [turnSwitch, setTurnSwitch] = useState(true);
 
@@ -14,6 +16,7 @@ export default function CommentsPage() {
     console.log(data);
   };
 
+  // API POST REQUEST
   const submitComment = async () => {
     const response = await fetch('/api/comments', {
       method: 'POST',
@@ -24,6 +27,30 @@ export default function CommentsPage() {
     });
     const data = await response.json();
     console.log(data);
+  };
+
+  // API DELETE REQUEST COMMENT
+  const deleteComment = async (commentId) => {
+    const response = await fetch(`/api/comments/${commentId}`, {
+      method: 'DELETE',
+    });
+    const data = await response.json();
+    console.log(data);
+    fetchComments();
+  };
+
+  // API PATCH REQUEST COMMENT
+  const patchComment = async (commentId) => {
+    const response = await fetch(`/api/comments/${commentId}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ text }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+    fetchComments();
   };
 
   return (
@@ -39,6 +66,7 @@ export default function CommentsPage() {
           <button onClick={() => setTurnSwitch(!turnSwitch)}>
             Hide comments
           </button>
+          <br />
           <input
             type='text'
             value={comment}
@@ -49,7 +77,20 @@ export default function CommentsPage() {
             return (
               <div key={comItem.id}>
                 <h1>{comItem.id}</h1>
-                <p>{comItem.text}</p>
+                <p>{comItem.text}</p> <br />
+                <input
+                  placeholder={comItem.text}
+                  type='text'
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                />
+                <button onClick={() => patchComment(comment.id)}>
+                  Update text
+                </button>
+                <br />
+                <button onClick={() => deleteComment(comment.id)}>
+                  Delete comment
+                </button>
               </div>
             );
           })}
