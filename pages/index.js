@@ -222,6 +222,17 @@ export default function Home() {
   // Within that 'api' folder, you can define all the APIs for your application
   // You can add business logic without needing to write any additional custom server code and without having to configure any API routes
   // Next JS give you everything you need to write full-stack React + NODE applications
+
+  // 48 API Summary
+  // API routing mechanism is similar to page based routing mechanism
+  // APIs are associated with a route based on their file name
+  // Every API route exports a default function typically named as handler function
+  // The handler function receives that request and response as parameters
+  // Cater to different request types like GET and POST using req.method
+  // Dynamic API routes
+  // Catch all API routes
+  // How to handle a DELETE request
+  // We should not call our own API routes for pre-rendering content for example it should be: Dashboard, pages where no need to pre-rendering some data otherwise just HTML elements with some JS code
   const router = useRouter();
 
   const handleClick = () => {

@@ -34,7 +34,7 @@ export default function handler(req, res, err) {
       text: textReq,
     };
     console.log(`changed`);
-    comments.unshift(newText);
+    comments.push(newText);
     res.status(200).json(newText);
   }
 }

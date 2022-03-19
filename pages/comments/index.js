@@ -27,6 +27,7 @@ export default function CommentsPage() {
     });
     const data = await response.json();
     console.log(data);
+    fetchComments();
   };
 
   // API DELETE REQUEST COMMENT
@@ -81,8 +82,12 @@ export default function CommentsPage() {
           {comments.map((comItem) => {
             return (
               <div key={comItem.id}>
-                <h1>{comItem.id}</h1>
-                <p>{comItem.text}</p> <br />
+                <Link href={`/comments/${comItem.id}`}>
+                  <div style={{ cursor: 'pointer' }}>
+                    <h1>{comItem.id}</h1>
+                    <p>{comItem.text}</p> <br />
+                  </div>
+                </Link>
                 <input
                   placeholder={comItem.text}
                   type='text'
