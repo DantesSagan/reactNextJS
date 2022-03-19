@@ -31,25 +31,30 @@ export default function CommentsPage() {
 
   // API DELETE REQUEST COMMENT
   const deleteComment = async (commentId) => {
-    const response = await fetch(`/api/comments/${commentId}`, {
+    await fetch(`/api/comments/${commentId}`, {
       method: 'DELETE',
-    });
-    const data = await response.json();
-    console.log(data);
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => console.log(data));
     fetchComments();
   };
 
+  // need to rework this PATCH method
   // API PATCH REQUEST COMMENT
   const patchComment = async (commentId) => {
-    const response = await fetch(`/api/comments/${commentId}`, {
+    await fetch(`/api/comments/${commentId}`, {
       method: 'PATCH',
       body: JSON.stringify({ text }),
       headers: {
         'Content-Type': 'application/json',
       },
-    });
-    const data = await response.json();
-    console.log(data);
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => console.log(data));
     fetchComments();
   };
 
