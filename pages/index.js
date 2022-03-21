@@ -240,6 +240,9 @@ export default function Home() {
   // Component styles
   // SASS or SCSS
   // Css-in-JS solution
+
+  // 54 Styling summary
+  // 
   const router = useRouter();
 
   const handleClick = () => {
