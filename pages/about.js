@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../styles/About.module.css';
+import styles from '../styles/About.module.scss';
 
 export default function About() {
   const [color, setColor] = useState(false);
@@ -10,7 +10,7 @@ export default function About() {
   // by using classNam equal to styles with .highlight object
   return (
     <div>
-      <h2 className={styles.highlight}>About page</h2>
+      <h2 className={styles.highlightscss}>About page</h2>
       {color ? (
         <div>
           <button className='btn btn-primary' onClick={() => setColor(!color)}>
