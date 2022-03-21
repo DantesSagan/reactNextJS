@@ -234,9 +234,9 @@ export default function Home() {
   // How to handle a DELETE request
   // We should not call our own API routes for pre-rendering content for example it should be: Dashboard, pages where no need to pre-rendering some data otherwise just HTML elements with some JS code
 
-  // 49 Styling intro 
+  // 49 Styling intro
   // Styling is essential to building any web application
-  // Global styles 
+  // Global styles
   // Component styles
   // SASS or SCSS
   // Css-in-JS solution
@@ -244,21 +244,21 @@ export default function Home() {
   // 54 Styling summary
   // Global - in our application, we need to import the CSS file within page/_app.js
   // Component Level - Next.js supports CSS modules using a [name].module.css naming convention
-  // SASS support - install the sass package 
+  // SASS support - install the sass package
   // CSS-in-JS solutions - Inline styles and Styled Components
 
   // 55 Miscellaneous(разнообразный) section intro
 
-  // App layout 
+  // App layout
   // Head Component
   // Image Component
   // Absolute imports and Module Paths
   // Configure TypeScript supports
-  // Preview 
-  // Next Config file 
-  // Redirects 
+  // Preview
+  // Next Config file
+  // Redirects
   // Environment Variables
-  
+
   const router = useRouter();
 
   const handleClick = () => {
@@ -269,6 +269,7 @@ export default function Home() {
     <div
       style={{
         textAlign: 'center',
+        minHeight: '100vh',
       }}
     >
       <h1>Home page</h1>
