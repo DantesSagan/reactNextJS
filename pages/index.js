@@ -242,7 +242,11 @@ export default function Home() {
   // Css-in-JS solution
 
   // 54 Styling summary
-  // 
+  // Global - in our application, we need to import the CSS file within page/_app.js
+  // Component Level - Next.js supports CSS modules using a [name].module.css naming convention
+  // SASS support - install the sass package 
+  // CSS-in-JS solutions - Inline styles and Styled Components
+  
   const router = useRouter();
 
   const handleClick = () => {
