@@ -246,6 +246,18 @@ export default function Home() {
   // Component Level - Next.js supports CSS modules using a [name].module.css naming convention
   // SASS support - install the sass package 
   // CSS-in-JS solutions - Inline styles and Styled Components
+
+  // 55 Miscellaneous(разнообразный) section intro
+
+  // App layout 
+  // Head Component
+  // Image Component
+  // Absolute imports and Module Paths
+  // Configure TypeScript supports
+  // Preview 
+  // Next Config file 
+  // Redirects 
+  // Environment Variables
   
   const router = useRouter();
 
