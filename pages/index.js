@@ -233,6 +233,13 @@ export default function Home() {
   // Catch all API routes
   // How to handle a DELETE request
   // We should not call our own API routes for pre-rendering content for example it should be: Dashboard, pages where no need to pre-rendering some data otherwise just HTML elements with some JS code
+
+  // 49 Styling intro 
+  // Styling is essential to building any web application
+  // Global styles 
+  // Component styles
+  // SASS or SCSS
+  // Css-in-JS solution
   const router = useRouter();
 
   const handleClick = () => {
