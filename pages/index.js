@@ -260,6 +260,16 @@ export default function Home() {
   // Redirects
   // Environment Variables
 
+  // 59 Absolute imports & Module paths
+  // In this case we are creating jsconfig.json that needed for
+  // orginized absolute imports & module paths to folders
+  // insted writing ../styles/globals.css we are write
+  // just styles/globals.css
+  // with adding just - BaseUrl:'.'
+  // and insted or writing ../components/layout/Header and etc
+  // we just write "@layout/*": ["components/layout/*"]
+  // Organized and simple!
+
   const router = useRouter();
 
   const handleClick = () => {

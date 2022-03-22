@@ -1,5 +1,5 @@
 import React from 'react';
-import Products from '../../components/products';
+import Products from '@layout/products';
 
 export default function ProductsList({ products }) {
   return <Products products={products} />;

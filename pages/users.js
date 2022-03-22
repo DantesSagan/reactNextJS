@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import User from '../components/user';
+import User from '@layout/user';
 
 export default function UsersList({ users }) {
   return (

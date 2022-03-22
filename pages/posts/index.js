@@ -1,5 +1,5 @@
 import React from 'react';
-import Posts from '../../components/posts';
+import Posts from '@layout/posts';
 
 export default function PostList({ posts }) {
   return <Posts posts={posts} />;
