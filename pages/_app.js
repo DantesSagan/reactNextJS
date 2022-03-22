@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/layout.css';
 
+import Head from 'next/dist/shared/lib/head';
 import { ThemeProvider } from 'styled-components';
 import Header from '../components/header';
 import Footer from '../components/Footer';
@@ -24,6 +25,13 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <>
+        <Head>
+          <title>Codevolution</title>
+          <meta
+            name='description'
+            content='Awesome y/t channel'
+          />
+        </Head>
         <Header />
         <Component {...pageProps} />;
         <Footer />

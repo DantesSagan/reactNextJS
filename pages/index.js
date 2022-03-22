@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -272,6 +273,15 @@ export default function Home() {
         minHeight: '100vh',
       }}
     >
+      {/* This is like head tag in HTML elements that contains information about current project or page for SEO */}
+      <Head>
+        {/* <title>About Codevolution</title> */}
+        <meta
+          name='description'
+          content='Free tutorials which i like user can use for leraning content that i could reuse in a job like Frontend developer'
+        />
+        <link rel='icon' href='/favicon.ico' />
+      </Head>
       <h1>Home page</h1>
       <nav
         style={{
