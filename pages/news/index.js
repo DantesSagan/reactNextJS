@@ -30,13 +30,15 @@ export default function NewsArticleList({ articles }) {
         <br />
         <button onClick={PickCategory}>Filter</button>
         <hr />
-        {articles.map((articlesItem) => {
+        {/* {articles.map((articlesItem) => {
           return (
             <div key={articlesItem.id}>
               {articlesItem.id}, {articlesItem.title}, {articlesItem.category}
             </div>
           );
-        })}
+        })} */}
+        {/* 62 */}
+        {articles}
         <hr />
         <button onClick={() => router.back()}>Back</button>
       </section>
@@ -55,9 +57,14 @@ export default function NewsArticleList({ articles }) {
 //     it is used only for pre-rendering and not client-side data fetching
 // 4. getServerSideProps should return an object and object should contain a props key which is an object
 // 5. getServerSideProps will run at request time
-export async function getServerSideProps() {
-  const response = await fetch('http://localhost:4000/news');
-  const data = await response.json();
+export async function getServerSideProps(context) {
+  // const response = await fetch('http://localhost:4000/news');
+  // const data = await response.json();
+  // 62
+  console.log('Running getStaticProps', context.previewData);
+  const data = context.preview
+    ? 'List of draft articles'
+    : 'List of published articles';
   return {
     props: {
       articles: data,

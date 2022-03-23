@@ -280,6 +280,24 @@ export default function Home() {
   // Client dise data fetching for dynamic content
   // Landing pages, blogs and any app where the content is generated at build time
 
+  // 62 Preview mode
+  // Help applications that rely on a CMS
+  // CMS stands for content management system and is a tool that helps users create, manage, and
+  // modify content on a website without the need for specialized technical knowledge
+  // In this video, we are not going to work with a CMS
+  // How preview mode can be used when you do have CMS
+
+  // When to use Preview mode?
+  // In the pre-rendering section, we understood about static generation where the pages
+  // the pages are pre-rendered at build time. It is pretty useful when your pages fetch data from a CMS
+
+  // However, it's not suitable when you're creating a draft in your CMS and want to preview the draft
+  // changes immediately on you page.
+  // You want Next.js to bypass static generation for the scenario
+  // You deploy your app and then when you make changes in your CMS, they won't be reflected
+  // as pages are only generated when you build the application
+  // There was a need to handle this scenario of "Preview of Publish" as I call it.
+
   const router = useRouter();
 
   const handleClick = () => {
