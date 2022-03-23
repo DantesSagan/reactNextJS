@@ -270,6 +270,16 @@ export default function Home() {
   // we just write "@layout/*": ["components/layout/*"]
   // Organized and simple!
 
+  // 60 Static HTML export
+  // next build - builds the application for producation in the .next folder
+  // next start - starts a Node.js server that supports hybrid pages, serving both statically generated and server-side rendered pages
+  // next support - Exports all your pages to static HTML files that you cn server without the need of a Node.js server
+
+  // Host you app on any static hosting service or a CDN without having to maintain a server
+  // Cannot use ISR or SSR
+  // Client dise data fetching for dynamic content
+  // Landing pages, blogs and any app where the content is generated at build time
+
   const router = useRouter();
 
   const handleClick = () => {
