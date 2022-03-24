@@ -309,6 +309,13 @@ export default function Home() {
   // Next configuration file and configuring redirects
   // Environments variables
 
+  // 66 Authentication section Intro
+  // What exactly does authentication entail when it comes to Next.js?
+  // Next-auth library
+  // Authenticating with GitHub
+  // Handle sign in, sign out and securing the application
+  // How to work with a database like MongoDB
+
   const router = useRouter();
 
   const handleClick = () => {
