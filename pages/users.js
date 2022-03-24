@@ -9,6 +9,7 @@ export default function UsersList({ users }) {
         marginTop: '200px',
         textAlign: 'center',
         justifyItems: 'center',
+        minHeight: '100vh',
       }}
     >
       <h1 style={{ textAlign: 'center' }}>

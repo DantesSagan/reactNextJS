@@ -27,7 +27,7 @@ export default function CommentIDPage({ commentsRender }) {
       .then((data) => console.log(data));
   };
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', minHeight: '100vh' }}>
       <button onClick={() => router.back()}>Back</button>
       <button onClick={() => window.history.forward()}>Further</button>
       <ul>

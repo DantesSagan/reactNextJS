@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Blog({ title, description }) {
   return (
-    <div>
+    <div style={{ minHeight: '100vh' }}>
       {/* This is local version HTML element of HEAD to Blog page 
         of blogId indexes 
         */}

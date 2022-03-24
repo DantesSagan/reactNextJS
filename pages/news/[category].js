@@ -5,7 +5,7 @@ export default function ArticleListByCategory({ articles, category }) {
   const router = useRouter();
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', minHeight: '100vh' }}>
       <section
         style={{
           textAlign: 'center',

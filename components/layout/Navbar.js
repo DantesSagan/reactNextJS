@@ -6,6 +6,7 @@ import { signIn, signOut, useSession } from 'next-auth/react';
 
 export default function Navbar() {
   const router = useRouter();
+  const { status, data: session } = useSession();
 
   const handleClick = () => {
     console.log('Placing you order');
@@ -21,7 +22,13 @@ export default function Navbar() {
         <div className='dropdown-content'>
           Signed in as {session.user.email}
           <br />
-          <button className='button' onClick={() => signOut()}>
+          <button
+            className='button'
+            onClick={(e) => {
+              e.preventDefault();
+              signOut();
+            }}
+          >
             Sign Out
           </button>
         </div>
@@ -32,7 +39,13 @@ export default function Navbar() {
     return (
       <div className='dropdown-content'>
         Not signted in <br />
-        <button className='button' onClick={() => signIn()}>
+        <button
+          className='button'
+          onClick={(e) => {
+            e.preventDefault();
+            signIn('github');
+          }}
+        >
           Sign In
         </button>
       </div>
@@ -44,13 +57,36 @@ export default function Navbar() {
         style={{
           display: 'flex',
           top: 0,
+          marginBottom: '400px',
         }}
       >
         <div id='navbar'>
           {' '}
           <div className='' style={{ display: 'inline-block' }}>
             <hr className='' />
-            <button
+            <section
+              className='buttonM '
+              style={{
+                color: 'black',
+                marginTop: '-5px',
+              }}
+            >
+              {' '}
+              <li
+                className='button'
+                style={{
+                  color: 'black',
+                }}
+              >
+                <Link href='/'>
+                  <a>Home</a>
+                </Link>
+              </li>
+            </section>{' '}
+          </div>
+          <div className='' style={{ display: 'inline-block' }}>
+            <hr className='' />
+            <section
               className='buttonM dropdown'
               style={{ display: 'inline-block', backgroundColor: 'white' }}
             >
@@ -73,15 +109,13 @@ export default function Navbar() {
                   </Link>
                 </li>
                 {/* Navigate Programmatically */}
-                <div>
-                  <button
-                    style={{ color: 'black' }}
-                    className='button'
-                    onClick={handleClick}
-                  >
-                    <a>Place Order</a>
-                  </button>
-                </div>
+                <button
+                  style={{ color: 'white', background: 'black' }}
+                  className='button'
+                  onClick={handleClick}
+                >
+                  <a>Place Order</a>
+                </button>
                 <li className='button'>
                   <Link href='/users'>
                     <a>Link to list of users</a>
@@ -93,11 +127,11 @@ export default function Navbar() {
                   </Link>
                 </li>
               </div>
-            </button>{' '}
+            </section>{' '}
           </div>
           <div className='' style={{ display: 'inline-block' }}>
             <hr className='' />
-            <button
+            <section
               className='buttonM dropdown'
               style={{ display: 'inline-block', backgroundColor: 'white' }}
             >
@@ -139,11 +173,11 @@ export default function Navbar() {
                   </Link>
                 </li>
               </div>
-            </button>{' '}
+            </section>{' '}
           </div>
           <div className='' style={{ display: 'inline-block' }}>
             <hr className='' />
-            <button
+            <section
               className='buttonM dropdown'
               style={{ display: 'inline-block', backgroundColor: 'white' }}
             >
@@ -156,7 +190,27 @@ export default function Navbar() {
                 >
                   Forward
                 </button> */}
-            </button>{' '}
+            </section>{' '}
+          </div>
+          <div className='' style={{ display: 'inline-block' }}>
+            <hr className='' />
+            <section
+              className='buttonM '
+              style={{
+                color: 'black',
+                marginTop: '-5px',
+              }}
+            >
+              {' '}
+              <li
+                className='button'
+                style={{
+                  color: 'black',
+                }}
+              >
+                {status === 'authenticated' ? session.user.name : null}
+              </li>
+            </section>{' '}
           </div>
         </div>
       </nav>

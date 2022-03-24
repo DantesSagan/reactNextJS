@@ -19,5 +19,5 @@ export default function Doc() {
   // wrap in squared brackets file [...params].js to => [[...params]].js
   // and you can navigate to http://localhost:3000/docs without any error
   // with following jsx = "Docs home page"
-  return <h1>Docs home page</h1>;
+  return <h1 style={{ minHeight: '100vh' }}>Docs home page</h1>;
 }

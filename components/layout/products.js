@@ -42,6 +42,7 @@ export default function Products({ products }) {
       style={{
         textAlign: 'center',
         marginTop: '200px',
+        minHeight: '100vh',
       }}
     >
       <section

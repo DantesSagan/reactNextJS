@@ -60,7 +60,7 @@ export default function CommentsPage() {
   };
 
   return (
-    <section style={{ textAlign: 'center' }}>
+    <section style={{ textAlign: 'center', minHeight: '100vh' }}>
       {/* In this case we check if current state of turnSwitch is true 
     so display Load comments if it false display comments with button Hide commets */}
       {turnSwitch ? (

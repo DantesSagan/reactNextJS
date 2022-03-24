@@ -21,7 +21,9 @@ export default function DashboardSWR() {
     return <h2>Loading...</h2>;
   }
   return (
-    <div style={{ textAlign: 'center', marginTop: '200px' }}>
+    <div
+      style={{ textAlign: 'center', marginTop: '200px', minHeight: '100vh' }}
+    >
       <h2>Dashboard</h2>
       <h2>Posts - {data.posts}</h2>
       <h2>Likes - {data.likes}</h2>

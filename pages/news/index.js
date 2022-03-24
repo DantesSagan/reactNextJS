@@ -9,7 +9,7 @@ export default function NewsArticleList({ articles }) {
     router.push(`http://localhost:3000/news/${category}`);
   };
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', minHeight: '100vh' }}>
       <section
         style={{
           textAlign: 'center',

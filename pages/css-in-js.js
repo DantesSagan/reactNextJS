@@ -8,5 +8,9 @@ const Title = styled.h1`
 `;
 
 export default function CSSJS() {
-  return <Title style={{ marginTop: '200px' }}>Styled Components</Title>;
+  return (
+    <Title style={{ marginTop: '200px', minHeight: '100vh' }}>
+      Styled Components
+    </Title>
+  );
 }

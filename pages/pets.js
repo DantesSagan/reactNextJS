@@ -18,7 +18,7 @@ export default function PetsPage() {
       triplet(0, r, g) + triplet(b, 255, 255)
     }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
   return (
-    <div style={{ marginTop: '200px' }}>
+    <div style={{ marginTop: '200px', minHeight: '100vh' }}>
       <Image
         src={imgOne}
         placeholder='blur'

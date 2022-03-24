@@ -12,7 +12,9 @@ export default function About() {
   // by using classNam equal to styles with .highlight object
   return (
     <div>
-      <h1 className='content'>About</h1>
+      <h1 className='content' style={{ minHeight: '100vh' }}>
+        About
+      </h1>
       <h2 className={styles.highlightscss}>About page</h2>
       {color ? (
         <div>

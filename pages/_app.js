@@ -9,6 +9,7 @@ import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'styled-components';
 import Footer from '@layout/Footer';
 import Navbar from '@layout/Navbar';
+import Admin from './protected';
 
 // Wrapping the Component and _app.js with ThemeProvider
 const theme = {
@@ -40,6 +41,7 @@ export default function App({
             <meta name='description' content='Awesome y/t channel' />
           </Head>
           <Navbar />
+          <Admin />
           <Component {...pageProps} />;
           <Footer />
         </>

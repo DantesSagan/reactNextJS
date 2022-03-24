@@ -20,7 +20,9 @@ export default function EventList({ eventList }) {
   const router = useRouter();
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '200px' }}>
+    <div
+      style={{ textAlign: 'center', marginTop: '200px', minHeight: '100vh' }}
+    >
       <button onClick={fetchSportsEvents}>Sports Events</button>
       <h1>EventList</h1>
       {events.map((eventItem) => {

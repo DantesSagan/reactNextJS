@@ -344,7 +344,7 @@ export default function Home() {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h1 style={{ marginTop: '200px' }}>Home page</h1>
+      <h1>Home page</h1>
     </div>
   );
 }

@@ -32,7 +32,9 @@ export default function Dashboard() {
   }
 
   return (
-    <div style={{ textAlign: 'center',marginTop:'200px' }}>
+    <div
+      style={{ textAlign: 'center', marginTop: '200px', minHeight: '100vh' }}
+    >
       <h2>Dashboard</h2>
       <h2>Posts - {dashboardData.posts}</h2>
       <h2>Likes - {dashboardData.likes}</h2>

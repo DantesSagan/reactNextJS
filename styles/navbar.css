@@ -19,6 +19,7 @@
 }
 
 .buttonM {
+  cursor: pointer;
   margin: 10px;
   padding: 5px 25px;
   border-radius: 10px;
@@ -37,6 +38,7 @@
 }
 
 .button {
+  cursor: pointer;
   margin: 10px;
   padding: 5px 25px;
   text-align: center;
@@ -59,6 +61,7 @@
 /* #ID */
 
 #navbar {
+  cursor: pointer;
   text-align: center;
   position: fixed;
   display: block;
