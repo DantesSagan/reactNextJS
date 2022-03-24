@@ -316,6 +316,21 @@ export default function Home() {
   // Handle sign in, sign out and securing the application
   // How to work with a database like MongoDB
 
+  // 67 Authentication in Next.js
+  // User
+  // Identity and access
+  // Identity verifies what permissions the user has 
+  // Identity - Authentication
+  // Access - Authorization
+
+  // Client-side authentication
+  // Server-side authenticatin
+  // API routes authentication
+  // User data
+  // No need to persist? Auth services like GutHub, Facebook. to ensure the user is authenticated
+  // Need to persist? Database
+
+
   const router = useRouter();
 
   const handleClick = () => {
