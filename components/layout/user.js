@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function User({ userItem }) {
   return (
-    <div>
+    <div style={{ marginTop: '200px' }}>
       <div key={userItem.id}>
         <ul className='usersUl'>
           <li className='usersLi'>{userItem.id}</li>

@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function PageNotFound() {
   return (
-    <h1 style={{ textAlign: 'center' }}>
+    <h1 style={{ textAlign: 'center', marginTop: '200px' }}>
       <span style={{ fontSize: '68px', textDecoration: 'underline' }}>404</span>
       <br /> This page could not be found <br />
       <Link href='/'>

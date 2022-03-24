@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function ProductList({ productId = 100 }) {
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', marginTop: '200px' }}>
       <Link href='/'>
         <a>Home</a>
       </Link>

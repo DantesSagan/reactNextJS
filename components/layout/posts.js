@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Posts({ posts }) {
   return (
-    <div>
+    <div style={{ marginTop: '200px' }}>
       <h1>List os Posts</h1>
       {posts.map((postItem) => {
         return (

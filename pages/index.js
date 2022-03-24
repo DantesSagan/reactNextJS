@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 export default function Home() {
   // Link component to path with slash - link included in the component
@@ -319,7 +317,7 @@ export default function Home() {
   // 67 Authentication in Next.js
   // User
   // Identity and access
-  // Identity verifies what permissions the user has 
+  // Identity verifies what permissions the user has
   // Identity - Authentication
   // Access - Authorization
 
@@ -330,13 +328,6 @@ export default function Home() {
   // No need to persist? Auth services like GutHub, Facebook. to ensure the user is authenticated
   // Need to persist? Database
 
-
-  const router = useRouter();
-
-  const handleClick = () => {
-    console.log('Placing you order');
-    router.replace('/product');
-  };
   return (
     <div
       style={{
@@ -353,85 +344,7 @@ export default function Home() {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h1>Home page</h1>
-      <nav
-        style={{
-          justifyItems: 'center',
-          display: 'inline-block',
-          border: '5px solid red',
-          borderRadius: '15px',
-          padding: '15px',
-        }}
-      >
-        <ol>
-          <li>
-            <Link href='/blog'>
-              <a>Link to Blog</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/blog/first'>
-              <a>Link to Blog first</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/product'>
-              <a>Link to product</a>
-            </Link>
-          </li>
-          And the same thing as <i>Link to Product</i> like example below <br />
-          {/* Navigate Programmatically */}
-          <button className='' onClick={handleClick}>
-            Place Order
-          </button>
-          <li>
-            <Link href='/users'>
-              <a>Link to list of users</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/posts'>
-              <a>Link to list of posts</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/products'>
-              <a>Link to list of products</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/news'>
-              <a>Link to list of news</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/dashboard'>
-              <a>Dashboard</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/dashboard-swr'>
-              <a>DashboardSWR</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/event'>
-              <a>Event</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/api'>
-              <a>API routes</a>
-            </Link>
-          </li>
-          <li>
-            <Link href='/comments'>
-              <a>Example with comments get request</a>
-            </Link>
-          </li>
-        </ol>{' '}
-        <button onClick={() => window.history.forward()}>Forward</button>
-      </nav>
+      <h1 style={{ marginTop: '200px' }}>Home page</h1>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import useSWR from 'swr';
 
-
 export default function EventList({ eventList }) {
   const [events, setEvents] = useState(eventList);
 
@@ -21,7 +20,7 @@ export default function EventList({ eventList }) {
   const router = useRouter();
 
   return (
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ textAlign: 'center', marginTop: '200px' }}>
       <button onClick={fetchSportsEvents}>Sports Events</button>
       <h1>EventList</h1>
       {events.map((eventItem) => {
