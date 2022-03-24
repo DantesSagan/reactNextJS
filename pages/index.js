@@ -298,6 +298,17 @@ export default function Home() {
   // as pages are only generated when you build the application
   // There was a need to handle this scenario of "Preview of Publish" as I call it.
 
+  // 65 Miscellaneous summary
+  // App layout in _app.js file
+  // Head component which helps you dynamically manage a document's head section
+  // Image component optimization
+  // Configure absolute imports and configure path aliases with the jsconfig.json
+  // next export commnd which exports your app into static HTML
+  // Setup support for TypeScript
+  // Preview mode feature is very helpful when working with a CMS
+  // Next configuration file and configuring redirects
+  // Environments variables
+
   const router = useRouter();
 
   const handleClick = () => {
