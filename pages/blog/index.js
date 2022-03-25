@@ -15,10 +15,22 @@ export default function Blog({ data }) {
 // get props from server side rendering especially
 // when you in sign in session you will be text displayed - ? 'List 100 blog posts(online)'
 // otherwise you will see : 'List of free blog posts(offline)', if you are offline
-export function getServerSideProps(context) {
-  const session = getSession(context);
+export async function getServerSideProps(context) {
+  const session = await getSession(context);
+
+  // Redirection to auth page even if you don't authenticated in this app
+  // By serverSideProps
+  if (!session) {
+    return {
+      redirect: {
+        destination: `/api/auth/signin?callbackUrl=http://localhost:3000/blog`,
+        permanent: false,
+      },
+    };
+  }
   return {
     props: {
+      session,
       data: session
         ? 'List 100 blog posts(online)'
         : 'List of free blog posts(offline)',
