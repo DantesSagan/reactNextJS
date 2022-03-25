@@ -61,7 +61,7 @@ export default function Navbar() {
           style={{ background: 'black', color: 'white' }}
           onClick={(e) => {
             e.preventDefault();
-            signIn('github');
+            signIn('google');
           }}
         >
           Sign In
