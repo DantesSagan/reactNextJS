@@ -32,7 +32,6 @@ export default function Auth({ children }) {
     },
   });
   const isUser = session?.user;
-
   if (isUser) {
     return children;
   }
@@ -40,7 +39,12 @@ export default function Auth({ children }) {
   if (status === 'loading') {
     return (
       <h1 style={{ textAlign: 'center', minHeight: '100vh' }}>
-        Loading or not authenticated...
+        Loading or not authenticated... <br />
+        {/* <button
+          onClick={() => router.push('http://localhost:3000/api/auth/signin')}
+        >
+          Sign in{' '}
+        </button> */}
       </h1>
     );
   }
