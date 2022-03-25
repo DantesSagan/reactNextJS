@@ -19,11 +19,20 @@ export default function Navbar() {
     // If you current session is online you will see this signOut elements with button
     if (session) {
       return (
-        <div className='dropdown-content'>
+        <div
+          className='dropdown-content'
+          style={{
+            background: 'black',
+            color: 'white',
+            textAlign: 'center',
+            padding: '10px',
+          }}
+        >
           Signed in as {session.user.email}
           <br />
           <button
             className='button'
+            style={{ background: 'black', color: 'white', textAlign: 'center' }}
             onClick={(e) => {
               e.preventDefault();
               signOut();
@@ -37,10 +46,19 @@ export default function Navbar() {
     // If you current session is offline you will see this signIn elements with button
     // to signIn with GitHub or whatever you want to currently authenticated
     return (
-      <div className='dropdown-content'>
+      <div
+        className='dropdown-content'
+        style={{
+          background: 'black',
+          color: 'white',
+          textAlign: 'center',
+          padding: '10px',
+        }}
+      >
         Not signted in <br />
         <button
           className='button'
+          style={{ background: 'black', color: 'white' }}
           onClick={(e) => {
             e.preventDefault();
             signIn('github');
@@ -208,7 +226,7 @@ export default function Navbar() {
                   color: 'black',
                 }}
               >
-                {status === 'authenticated' ? session.user.name : null}
+                {status === 'authenticated' ? session.user.name : <div>Not sign in</div>}
               </li>
             </section>{' '}
           </div>

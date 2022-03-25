@@ -4,12 +4,14 @@ import 'styles/layout.css';
 import 'styles/navbar.css';
 
 import Head from 'next/dist/shared/lib/head';
-import { SessionProvider } from 'next-auth/react';
+import { SessionProvider, useSession } from 'next-auth/react';
 
 import { ThemeProvider } from 'styled-components';
 import Footer from '@layout/Footer';
 import Navbar from '@layout/Navbar';
 import Admin from './protected';
+import { useRouter } from 'next/router';
+import Auth from './protected';
 
 // Wrapping the Component and _app.js with ThemeProvider
 const theme = {
@@ -41,8 +43,9 @@ export default function App({
             <meta name='description' content='Awesome y/t channel' />
           </Head>
           <Navbar />
-          <Admin />
-          <Component {...pageProps} />;
+          <Auth>
+            <Component {...pageProps} />
+          </Auth>
           <Footer />
         </>
       </ThemeProvider>
