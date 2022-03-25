@@ -1,6 +1,9 @@
+import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 
 export default function Home() {
+  const { data: session, status } = useSession();
+  console.log({ session, status });
   // Link component to path with slash - link included in the component
   // With the anchor tag with the text and the href for the route to the component
 
@@ -344,7 +347,14 @@ export default function Home() {
         />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <h1>Home page</h1>
+      <h1>
+        Home page for {session.user.name ? <div>{session.user.name}</div> : ''}
+      </h1>
+      <img
+        style={{ borderRadius: '30px' }}
+        alt={`${session.user.name}`}
+        src={session.user.image ? session.user.image : ''}
+      />
     </div>
   );
 }

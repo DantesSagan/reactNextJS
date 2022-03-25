@@ -2,6 +2,7 @@ import React from 'react';
 import { getProviders, getSession, signIn } from 'next-auth/react';
 
 export default function LoginPage({ providers }) {
+    
   console.log(Object.values(providers).map((provider) => provider.name));
   return (
     <div>
