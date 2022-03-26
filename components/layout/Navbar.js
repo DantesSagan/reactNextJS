@@ -75,7 +75,7 @@ export default function Navbar() {
         style={{
           display: 'flex',
           top: 0,
-          marginBottom: '400px',
+          marginBottom: '200px',
         }}
       >
         <div id='navbar'>
@@ -142,6 +142,11 @@ export default function Navbar() {
                 <li className='button'>
                   <Link href='/posts'>
                     <a>Link to list of posts</a>
+                  </Link>
+                </li>
+                <li className='button'>
+                  <Link href='/qrpage'>
+                    <a>Link to QRpage</a>
                   </Link>
                 </li>
               </div>
@@ -226,7 +231,11 @@ export default function Navbar() {
                   color: 'black',
                 }}
               >
-                {status === 'authenticated' ? session.user.name : <div>Not sign in</div>}
+                {status === 'authenticated' ? (
+                  session.user.name
+                ) : (
+                  <div>Not sign in</div>
+                )}
               </li>
             </section>{' '}
           </div>
