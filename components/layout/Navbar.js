@@ -195,6 +195,11 @@ export default function Navbar() {
                     <a>Example with comments get request</a>
                   </Link>
                 </li>
+                <li className='button'>
+                  <Link href='/api/text-session'>
+                    <a>Api text-session</a>
+                  </Link>
+                </li>
               </div>
             </section>{' '}
           </div>
