@@ -3,8 +3,12 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import { signIn, signOut, useSession } from 'next-auth/react';
+import { seedDatabse } from '../firebaseLib/seedDatabase';
+import { firebaseLib } from '../firebaseLib/firebase';
 
 export default function Navbar() {
+  // const seed = seedDatabse(firebaseLib);
+  // console.log(seed);
   const router = useRouter();
   const { status, data: session } = useSession();
 
