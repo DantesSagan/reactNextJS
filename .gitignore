@@ -1,5 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# firebase
+/components/firebaseLib/firebase.js
+
 # folders & files
 /hooks
 /info

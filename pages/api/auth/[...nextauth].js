@@ -21,9 +21,23 @@ export default NextAuth({
   secret: process.env.SECRET,
   database: process.env.DB_URL,
   session: {
-    jwt: true,
+    strategy: 'jwt',
   },
   jwt: {
     secret: 'sadfsadfadferge',
+  },
+  callbacks: {
+    // when you athenticated will be created token that equal to user.id
+    // and if you don't displayed this there is no be id from auth
+    async jwt({ token, user }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      session.user.id = token.id;
+      return session;
+    },
   },
 });

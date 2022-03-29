@@ -204,6 +204,16 @@ export default function Navbar() {
                     <a>Api text-session</a>
                   </Link>
                 </li>
+                <li className='button'>
+                  <Link href='/text-session'>
+                    <a>Text-session</a>
+                  </Link>
+                </li>
+                <li className='button'>
+                  <Link href='/firebase-data'>
+                    <a>Link to FirebaseData</a>
+                  </Link>
+                </li>
               </div>
             </section>{' '}
           </div>

@@ -331,6 +331,19 @@ export default function Home() {
   // No need to persist? Auth services like GutHub, Facebook. to ensure the user is authenticated
   // Need to persist? Database
 
+  // 78 Authentication summary
+  // Authentication in Next.js
+  // Next-auth package
+  // Configure the next-auth library with Github
+  // Sign in and Sign out
+  // Client-side authentication using the useSession hook
+  // Securing pages client side using the getSession function
+  // Next-auth Provider which imporoves performance, reduces network calls and avoids page flicker when rendering
+  // Server-side authentication with the getSesstion function in getServerSideProps
+  // Secured pages server side by redirecting from getServerSideProps (ProtectedRoute)
+  // getSession function can be used for authenticating API routes
+  // How to connect to a database like mongoDB (not working, i used FireBase) to persist user data
+  // Callbacks let you customize the session objects there is available for use in you app 
   return (
     <div
       style={{
