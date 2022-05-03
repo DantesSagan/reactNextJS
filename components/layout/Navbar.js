@@ -162,7 +162,7 @@ export default function Navbar() {
               className='buttonM dropdown'
               style={{ display: 'inline-block', backgroundColor: 'white' }}
             >
-              First section
+              Second section
               <div className='dropdown-content'>
                 <li className='button'>
                   <Link href='/products'>

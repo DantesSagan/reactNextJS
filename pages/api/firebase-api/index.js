@@ -18,7 +18,7 @@ import { firebaseLib } from '../../../components/firebaseLib/firebase';
 const handler = async (req, res) => {
   const docId = await firebaseLib
     .firestore()
-    .collection('users')
+    .collection('table')
     .get()
     .then((serverUpdate) => {
       let todolist = [];
