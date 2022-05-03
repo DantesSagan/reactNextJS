@@ -9,6 +9,7 @@ import {
   Box,
   Snackbar,
   LinearProgress,
+  CircularProgress,
 } from '@mui/material';
 import IndexApiTable from 'components/ulttable/api';
 import TableApiSort from 'components/ulttable/apiSort';
@@ -139,9 +140,9 @@ export default function FirebaseData() {
   async function getDataDB() {
     const response = await fetch('/api/firebase-api');
     const data = await response.json();
-    setTable(data);
     setTurnSwitch(!turnSwitch);
     console.log(data);
+    return setTable(data);
   }
 
   console.log(table);
@@ -149,7 +150,7 @@ export default function FirebaseData() {
   useEffect(() => {
     defaultSort
       ? getDataDB().then(() => setLoading(false))
-      : getDataDB().then(() => setLoading(false));
+      : getDataDB().then(() => setLoading(true));
   }, []);
 
   const {
@@ -191,6 +192,11 @@ export default function FirebaseData() {
     rowTableID,
     id,
     setId,
+    getDataDB,
+    setLoading,
+    loading,
+    setDefaultSort,
+    defaultSort,
   });
 
   const handleCloseSnack = (
@@ -423,7 +429,7 @@ export default function FirebaseData() {
             color='info'
             onClick={() => {
               setDefaultSort(!defaultSort);
-              getDataDB();
+              getDataDB().then(() => setLoading(false));
             }}
           >
             Default sort
@@ -431,7 +437,13 @@ export default function FirebaseData() {
         </Box>
       </Stack>{' '}
       {loading ? (
-        <LinearProgress color='success' aria-describedby='dialog-description' />
+        <Stack alignItems='center'>
+          <CircularProgress
+            size={'10rem'}
+            color='success'
+            aria-describedby='dialog-description'
+          />
+        </Stack>
       ) : (
         <TableContainer component={Paper}>
           {' '}

@@ -132,7 +132,7 @@ export default function BodyTable({
               <TableCell>
                 <Chip
                   color='primary'
-                  key={table}
+                  key={table.docId[row].dataArr.id}
                   label={table.docId[row].dataArr.id}
                   onClick={() => setDel(!del)}
                 />

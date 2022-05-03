@@ -29,7 +29,6 @@ export default function IndexApiTable({
       dataArr,
     }).then(() => {
       console.log(`Post successfull of ${dataArr}!`);
-      getDataDB().then(() => setLoading(true));
     });
     // });
   };

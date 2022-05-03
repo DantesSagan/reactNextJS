@@ -19,6 +19,11 @@ export default function HandlersTable({
   rowTableID,
   id,
   setId,
+  getDataDB,
+  setLoading,
+  loading,
+  setDefaultSort,
+  defaultSort,
 }) {
   const handleEditFirstName = (
     rowToEdit: string | null,
@@ -117,10 +122,14 @@ export default function HandlersTable({
         ip_address: ip,
         docID: rowTableID,
       };
-      snackArray.push(newData);
-      table.docId.push(newData);
       submitData(newData);
       setOpenSnack(true);
+      setLoading(true);
+      getDataDB().then(() =>
+        setTimeout(() => {
+          setLoading(false);
+        }, 400)
+      );
       // }
     });
   };
@@ -131,6 +140,12 @@ export default function HandlersTable({
     // });
     // console.log(index);
     deleteData(rowToDelete, rowDeleteID);
+    setLoading(true);
+    getDataDB().then(() =>
+      setTimeout(() => {
+        setLoading(false);
+      }, 400)
+    );
     return Object.keys(table.docId).map((row: string) => {
       Object.values(table.docId[row].dataArr).filter(
         (rowID: { id: number }) => {
