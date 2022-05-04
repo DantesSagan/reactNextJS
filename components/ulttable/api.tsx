@@ -29,6 +29,7 @@ export default function IndexApiTable({
       dataArr,
     }).then(() => {
       console.log(`Post successfull of ${dataArr}!`);
+      getDataDB().then(() => setLoading(false));
     });
     // });
   };
@@ -47,89 +48,108 @@ export default function IndexApiTable({
 
   // PUT method changes string in object and delete another strings and return only changed string
   // PATCH method chages string in object and return whole object with changed string
+  //   {
+  //   id: number | null;
+  //   first_name: string | null;
+  //   last_name: string | null;
+  //   email: string | null;
+  //   gender: string | null;
+  //   ip_address: string | null;
+  //   docID: string | null;
+  // }
 
   // API PATCH METHOD FIRST NAME
   const patchFirstName = async (
     first_name: string | null,
-    id: number | null
+    docIDRow: string | null
   ) => {
-    await fetch(`http://localhost:4000/tableData/${id}`, {
-      method: 'PATCH',
-      body: JSON.stringify({ first_name }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => console.log(data));
-    getDataDB().then(() => setLoading(false));
+    const editRef = doc(firebaseLib.firestore(), 'table', docIDRow);
+
+    await updateDoc(editRef, {
+      'dataArr.first_name': first_name,
+    }).then(() => {
+      console.log(
+        `Changes first_name successfull of ${docIDRow} for ${first_name}`
+      );
+      getDataDB().then(() => setLoading(false));
+    });
   };
 
   // API PATCH METHOD LAST NAME
-  const patchLastName = async (last_name: string | null, id: number | null) => {
-    await fetch(`http://localhost:4000/tableData/${id}`, {
-      method: 'PATCH',
-      body: JSON.stringify({ last_name }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => console.log(data));
-    getDataDB().then(() => setLoading(false));
+  const patchLastName = async (
+    last_name: string | null,
+    docIDRow: string | null
+  ) => {
+    const editRef = doc(firebaseLib.firestore(), 'table', docIDRow);
+
+    await updateDoc(editRef, {
+      'dataArr.last_name': last_name,
+    }).then(() => {
+      console.log(
+        `Changes last_name successfull of ${docIDRow} for ${last_name}`
+      );
+      getDataDB().then(() => setLoading(false));
+    });
   };
 
   // API PATCH METHOD EMAIL
-  const patchEmail = async (email: string | null, id: number | null) => {
-    await fetch(`http://localhost:4000/tableData/${id}`, {
-      method: 'PATCH',
-      body: JSON.stringify({ email }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => console.log(data));
-    getDataDB().then(() => setLoading(false));
+  const patchEmail = async (email: string | null, docIDRow: string | null) => {
+    const editRef = doc(firebaseLib.firestore(), 'table', docIDRow);
+
+    await updateDoc(editRef, {
+      'dataArr.email': email,
+    }).then(() => {
+      console.log(`Changes email successfull of ${docIDRow} for ${email}`);
+      getDataDB().then(() => setLoading(false));
+    });
   };
 
   // API PATCH METHOD GENDER
-  const patchGender = async (gender: string | null, id: number | null) => {
-    await fetch(`http://localhost:4000/tableData/${id}`, {
-      method: 'PATCH',
-      body: JSON.stringify({ gender }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => console.log(data));
-    getDataDB().then(() => setLoading(false));
-  };
-  // API PATCH METHOD IP
-  const patchIp = async (ip_address: string | null, id: number | null) => {
-    await fetch(`http://localhost:4000/tableData/${id}`, {
-      method: 'PATCH',
-      body: JSON.stringify({ ip_address }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => console.log(data));
-    getDataDB().then(() => setLoading(false));
+  const patchGender = async (
+    gender: string | null,
+    docIDRow: string | null
+  ) => {
+    const editRef = doc(firebaseLib.firestore(), 'table', docIDRow);
+
+    await updateDoc(editRef, {
+      'dataArr.gender': gender,
+    }).then(() => {
+      console.log(`Changes gender successfull of ${docIDRow} for ${gender}`);
+      getDataDB().then(() => setLoading(false));
+    });
   };
 
+  // API PATCH METHOD IP
+  const patchIp = async (
+    ip_address: string | null,
+    docIDRow: string | null
+  ) => {
+    const editRef = doc(firebaseLib.firestore(), 'table', docIDRow);
+
+    await updateDoc(editRef, {
+      'dataArr.ip_address': ip_address,
+    }).then(() => {
+      console.log(
+        `Changes ip_address successfull of ${docIDRow} for ${ip_address}`
+      );
+      getDataDB().then(() => setLoading(false));
+    });
+  };
+
+  // API PATCH CLOSE BOOLEAN
+  const patchCloseBoolean = async (
+    close: boolean | null,
+    docIDRow: string | null
+  ) => {
+    const editRef = doc(firebaseLib.firestore(), 'table', docIDRow);
+
+    await updateDoc(editRef, {
+      'dataArr.close': close,
+    }).then(() => {
+      console.log(`Changes close successfull of ${docIDRow} for ${close}`);
+      getDataDB().then(() => setLoading(false));
+    });
+  };
   return {
     submitData,
     deleteData,
@@ -138,5 +158,6 @@ export default function IndexApiTable({
     patchEmail,
     patchGender,
     patchIp,
+    patchCloseBoolean,
   };
 }

@@ -1,4 +1,8 @@
+import { getBottomNavigationActionUtilityClass } from '@mui/material';
+import { arrayUnion } from 'firebase/firestore';
+
 export default function HandlersTable({
+  close,
   setClose,
   setTable,
   table,
@@ -24,69 +28,74 @@ export default function HandlersTable({
   loading,
   setDefaultSort,
   defaultSort,
+  patchCloseBoolean,
 }) {
   const handleEditFirstName = (
     rowToEdit: string | null,
-    rowFirstName: string | null,
-    rowID: number | null
+    rowID: string | null
   ) => {
     setClose(!close);
-    return Object.keys(table.docId).map((item) => {
-      return rowFirstName === table.docId[item].first_name
-        ? patchFirstName((table.docId[item].first_name = rowToEdit), rowID)
-        : console.log('error');
-    });
+    setLoading(true);
+    getDataDB().then(() =>
+      setTimeout(() => {
+        setLoading(false);
+      }, 400)
+    );
+    patchFirstName(rowToEdit, rowID);
   };
 
   const handleEditLastName = (
     rowToEdit: string | null,
-    rowLastName: string | null,
-    rowID: number | null
+    rowID: string | null
   ) => {
     setClose(!close);
-    return Object.keys(table.docId).map((item) => {
-      rowLastName === table.docId[item].last_name
-        ? patchLastName((table.docId[item].last_name = rowToEdit), rowID)
-        : console.log('error');
-    });
+    getDataDB().then(() =>
+      setTimeout(() => {
+        setLoading(false);
+      }, 400)
+    );
+    patchLastName(rowToEdit, rowID);
   };
 
-  const handleEditEmail = (
-    rowToEdit: string | null,
-    rowEmail: string | null,
-    rowID: number | null
-  ) => {
+  const handleEditEmail = (rowToEdit: string | null, rowID: string | null) => {
     setClose(!close);
-    return Object.keys(table.docId).map((item) => {
-      rowEmail === table.docId[item].email
-        ? patchEmail((table.docId[item].email = rowToEdit), rowID)
-        : null;
-    });
+    getDataDB().then(() =>
+      setTimeout(() => {
+        setLoading(false);
+      }, 400)
+    );
+    patchEmail(rowToEdit, rowID);
   };
 
-  const handleEditGender = (
-    rowToEdit: string | null,
-    rowGender: string | null,
-    rowID: number | null
-  ) => {
-    setClose(!close);
-    return Object.keys(table.docId).map((item) => {
-      rowGender === table.docId[item].gender
-        ? patchGender((table.docId[item].gender = rowToEdit), rowID)
-        : null;
-    });
+  const handleEditGender = (rowToEdit: string | null, rowID: string | null) => {
+    getDataDB().then(() =>
+      setTimeout(() => {
+        setLoading(false);
+      }, 400)
+    );
+    patchGender(rowToEdit, rowID);
   };
-  const handleEditIp = (
-    rowToEdit: string | null,
-    rowIp: string | null,
-    rowID: number | null
+
+  const handleEditIp = (rowToEdit: string | null, rowID: string | null) => {
+    getDataDB().then(() =>
+      setTimeout(() => {
+        setLoading(false);
+      }, 400)
+    );
+    patchIp(rowToEdit, rowID);
+  };
+
+  const handleCloseBoolean = (
+    rowBoolean: boolean | null,
+    rowID: string | null,
+    rowGender: string[] | null
   ) => {
-    setClose(!close);
-    return Object.keys(table.docId).map((item) => {
-      rowIp === table.docId[item].ip_address
-        ? patchIp((table.docId[item].ip_address = rowToEdit), rowID)
-        : null;
-    });
+    getDataDB().then(() =>
+      setTimeout(() => {
+        setLoading(false);
+      }, 400)
+    );
+    patchCloseBoolean(rowBoolean, rowID, rowGender);
   };
 
   const handleAdd = () => {
@@ -121,6 +130,7 @@ export default function HandlersTable({
         gender: gender,
         ip_address: ip,
         docID: rowTableID,
+        close: true,
       };
       submitData(newData);
       setOpenSnack(true);
@@ -162,5 +172,6 @@ export default function HandlersTable({
     handleEditIp,
     handleDelete,
     handleAdd,
+    handleCloseBoolean,
   };
 }

@@ -161,6 +161,7 @@ export default function FirebaseData() {
     patchEmail,
     patchGender,
     patchIp,
+    patchCloseBoolean,
   } = IndexApiTable({ getDataDB, setLoading, table, rowTableID });
 
   const {
@@ -171,7 +172,9 @@ export default function FirebaseData() {
     handleEditIp,
     handleDelete,
     handleAdd,
+    handleCloseBoolean,
   } = HandlersTable({
+    close,
     setClose,
     setTable,
     table,
@@ -185,6 +188,7 @@ export default function FirebaseData() {
     patchGender,
     patchEmail,
     patchIp,
+    patchCloseBoolean,
     submitData,
     deleteData,
     snackArray,
@@ -549,6 +553,7 @@ export default function FirebaseData() {
               handleEditGender={handleEditGender}
               handleEditIp={handleEditIp}
               getDataDB={getDataDB}
+              handleCloseBoolean={handleCloseBoolean}
             />
           </Table>
         </TableContainer>

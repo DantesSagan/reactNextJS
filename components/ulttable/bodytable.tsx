@@ -42,6 +42,7 @@ export default function BodyTable({
   snackArray,
   id,
   setID,
+  handleCloseBoolean,
 }) {
   return (
     <TableBody>
@@ -176,8 +177,7 @@ export default function BodyTable({
                           setClose(!close);
                           handleEditFirstName(
                             firstName,
-                            table.docId[row].dataArr.first_name,
-                            row
+                            table.docId[row].dataArr.docID
                           );
                         }}
                       >
@@ -211,8 +211,7 @@ export default function BodyTable({
                           setClose(!close);
                           handleEditLastName(
                             lastName,
-                            table.docId[row].dataArr.last_name,
-                            row
+                            table.docId[row].dataArr.docID
                           );
                         }}
                       >
@@ -246,8 +245,7 @@ export default function BodyTable({
                           setClose(!close);
                           handleEditEmail(
                             email,
-                            table.docId[row].dataArr.email,
-                            row
+                            table.docId[row].dataArr.docID
                           );
                         }}
                       >
@@ -276,27 +274,50 @@ export default function BodyTable({
                   }}
                   InputProps={{
                     endAdornment: (
-                      <Button
-                        onClick={() => {
-                          setClose(!close);
-                          handleEditGender(
-                            gender,
-                            table.docId[row].dataArr.gender,
-                            row
-                          );
-                        }}
-                      >
-                        edit
-                      </Button>
+                      <>
+                        <Button
+                          style={{
+                            maxWidth: '40px',
+                            minWidth: '20px',
+                          }}
+                          size='small'
+                          color='error'
+                          variant='contained'
+                          onClick={() =>
+                            handleCloseBoolean(
+                              true,
+                              table.docId[row].dataArr.docID
+                            )
+                          }
+                        >
+                          <Button
+                            onClick={() => {
+                              setClose(!close);
+                              handleEditGender(
+                                gender,
+                                table.docId[row].dataArr.docID
+                              );
+                            }}
+                          >
+                            edit
+                          </Button>
+                          -
+                        </Button>
+                      </>
                     ),
                   }}
                 />
               </TableCell>
             )}
             {/* IP */}
-            {close ? (
+            {table.docId[row].dataArr.close ? (
               <TableCell key={row}>
-                <Button onClick={() => setClose(!close)}>
+                <Button
+                  onClick={() => {
+                    handleCloseBoolean(false, table.docId[row].dataArr.docID);
+                    // setClose(table.docId[row].dataArr.close);
+                  }}
+                >
                   {table.docId[row].dataArr.ip_address}
                 </Button>
               </TableCell>
@@ -311,18 +332,42 @@ export default function BodyTable({
                   }}
                   InputProps={{
                     endAdornment: (
-                      <Button
-                        onClick={() => {
-                          setClose(!close);
-                          handleEditIp(
-                            ip,
-                            table.docId[row].dataArr.ip_address,
-                            row
-                          );
-                        }}
-                      >
-                        edit
-                      </Button>
+                      <>
+                        {' '}
+                        <Button
+                          style={{
+                            maxWidth: '40px',
+                            minWidth: '20px',
+                          }}
+                          size='small'
+                          onClick={() => {
+                            handleCloseBoolean(
+                              true,
+                              table.docId[row].dataArr.docID
+                            );
+                            handleEditIp(ip, table.docId[row].dataArr.docID);
+                          }}
+                        >
+                          +
+                        </Button>
+                        <Button
+                          style={{
+                            maxWidth: '40px',
+                            minWidth: '20px',
+                          }}
+                          size='small'
+                          color='error'
+                          variant='contained'
+                          onClick={() =>
+                            handleCloseBoolean(
+                              true,
+                              table.docId[row].dataArr.docID
+                            )
+                          }
+                        >
+                          -
+                        </Button>
+                      </>
                     ),
                   }}
                 />
